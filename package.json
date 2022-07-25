@@ -12,12 +12,13 @@
     "ssb-server": "./bin.js"
   },
   "scripts": {
-    "start": "node bin start",
+    "start": "node bin start --logging.level=info",
     "prepublishOnly": "npm test",
     "test": "set -e; for t in test/*.js; do echo TEST $t; node $t; done",
     "test:pretty": "npm run test | tap-spec",
     "reinstall": "rm -rf node_modules package-lock.json npm-shrinkwrap.json; export npm_config_package_lock=true; npm install && npm dedupe && npm shrinkwrap",
-    "coverage": "nyc --reporter=lcov npm test"
+    "coverage": "nyc --reporter=lcov npm test",
+    "invite": "192.168.199.245:8008:@rX4BInj0+OAEqVaqK1WeKmnguwKANpQwWld/rjnZksw=.ed25519~wbxrAygQtaFQig6Gpwbl4LXLcz1xTttZV6H/Lu3oKRA="
   },
   "dependencies": {
     "bash-color": "~0.0.3",
